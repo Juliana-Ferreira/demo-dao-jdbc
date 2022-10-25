@@ -23,5 +23,11 @@ public class Program {
 		for(Seller x : list) {
 			System.out.println(x);
 		}
+		
+		System.out.println("\n-----------> Teste 3 - findAll: <-----------");
+		list = sellerDao.findAll();
+		for(Seller x : list) {
+			System.out.println(x);
+		}
 	}
 }
