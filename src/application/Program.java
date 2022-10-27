@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import db.DB;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
@@ -36,7 +37,7 @@ public class Program {
 		System.out.println("\n-----------> Teste 4 - insert: <-----------");
 		Seller newSeller = new Seller(null, "Greg White", "greg@gmail.com", new Date(), 4000.0, department);
 		sellerDao.insert(newSeller);
-		System.out.println("Inserted. New id: " + + newSeller.getId());
+		System.out.println("Inserted. New id: " + newSeller.getId());
 		
 		System.out.println("\n-----------> Teste 5 - update: <-----------");
 		seller = sellerDao.findById(1);
@@ -51,5 +52,6 @@ public class Program {
 		System.out.println("Delete completed.");
 		
 		sc.close();
+		DB.closeConnection();
 	}
 }
